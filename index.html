@@ -308,11 +308,39 @@
       
         
           
-            <p>Play Framework 模板里使用注入访问数据层<br>从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。</p>
+            <p>从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。</p>
 <p>其实实现起来也很简单，定义数据层那就不说了。</p>
-<h3 id="创建-MessageServices-调用数据层："><a href="#创建-MessageServices-调用数据层：" class="headerlink" title="创建 MessageServices 调用数据层："></a>创建 MessageServices 调用数据层：</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageServices</span> <span class="title">@Inject</span>(<span class="params"></span>)(<span class="params">messages: <span class="type">Messages</span></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">retrieve</span></span>(id:<span class="type">Long</span>) = <span class="type">Await</span>.result(messages.retrieve(id),<span class="type">Duration</span>.<span class="type">Inf</span>)</div><div class="line"></div><div class="line">&#125;</div><div class="line">``` </div><div class="line">### 创建<span class="type">ViewAccessPoint</span> 方便模板调用：</div><div class="line">``` scala</div><div class="line"><span class="class"><span class="keyword">object</span> <span class="title">ViewAccessPoint</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">val</span> myDaoCache = <span class="type">Application</span>.instanceCache[<span class="type">MessageServices</span>]</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">object</span> <span class="title">Implicits</span> </span>&#123;</div><div class="line">        <span class="keyword">implicit</span> <span class="function"><span class="keyword">def</span> <span class="title">myDao</span></span>(<span class="keyword">implicit</span> application: <span class="type">Application</span>): <span class="type">MessageServices</span> = myDaoCache(application)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="html模板："><a href="#html模板：" class="headerlink" title="html模板："></a>html模板：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">@import services.ViewAccessPoint.Implicits._</div><div class="line">@import play.api.Play.current</div><div class="line">@(id:Long)</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">      @defining(myDao.retrieve(id))&#123; mood =&gt;</div><div class="line">        @mood.get.content</div><div class="line">      &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="https://github.com/xjpz/play-view" target="_blank" rel="external">源码：https://github.com/xjpz/play-view</a></p>
+<h3 id="创建-MessageServices-调用数据层"><a href="#创建-MessageServices-调用数据层" class="headerlink" title="创建 MessageServices 调用数据层"></a>创建 MessageServices 调用数据层</h3><pre><code>class MessageServices @Inject()(messages: Messages) {
+
+    def retrieve(id:Long) = Await.result(messages.retrieve(id),Duration.Inf)
+
+}
+</code></pre><h3 id="创建ViewAccessPoint-方便模板调用"><a href="#创建ViewAccessPoint-方便模板调用" class="headerlink" title="创建ViewAccessPoint 方便模板调用"></a>创建ViewAccessPoint 方便模板调用</h3><pre><code>object ViewAccessPoint {
+    private val myDaoCache = Application.instanceCache[MessageServices]
+
+    object Implicits {
+        implicit def myDao(implicit application: Application): MessageServices = myDaoCache(application)
+    }
+}
+</code></pre><h3 id="html模板"><a href="#html模板" class="headerlink" title="html模板"></a>html模板</h3><pre><code>@import services.ViewAccessPoint.Implicits._
+@import play.api.Play.current
+@(id:Long)
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;p&gt;
+      @defining(myDao.retrieve(id)){ mood =&gt;
+        @mood.get.content
+      }
+  &lt;/p&gt;
+
+&lt;/body&gt;
+</code></pre><p><a href="https://github.com/xjpz/play-view" target="_blank" rel="external">源码：https://github.com/xjpz/play-view</a></p>
 
           
         
@@ -510,7 +538,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
