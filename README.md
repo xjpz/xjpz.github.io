@@ -1,2 +1,2 @@
-# xjpz @https://git.oschina.net/xjpz/xjpz.git
-[address](https://xjpz.me)
+# xjpz.github.io
+[xjpz.github.io](https://xjpz.github.io/)
