@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="心尖偏左,xjpz,心尖偏左博客,xjpzblog,心尖偏左Blog,心尖依然偏左,scala+play,Scala满足了我对编程语言的所有幻想." />
+  <meta name="keywords" content="redis," />
 
 
 
@@ -84,16 +84,37 @@
 
 
 
-<meta name="description" content="工作、也是一种修行!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签云">
-<meta property="og:url" content="https://coding.net/u/xjpz/p/xjpz/tags/index.html">
+<meta name="description" content="Question将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+Answer需将 redis配置 
+
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis - Connection refused:connect connect 小记">
+<meta property="og:url" content="https://coding.net/u/xjpz/p/xjpz/2016/09/29/Redis - Connection refusedconnect connect小记/index.html">
 <meta property="og:site_name" content="心尖偏左">
-<meta property="og:description" content="工作、也是一种修行!">
-<meta property="og:updated_time" content="2016-09-09T09:43:19.520Z">
+<meta property="og:description" content="Question将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+Answer需将 redis配置 
+
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
+<meta property="og:updated_time" content="2016-09-29T03:17:17.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签云">
-<meta name="twitter:description" content="工作、也是一种修行!">
+<meta name="twitter:title" content="Redis - Connection refused:connect connect 小记">
+<meta name="twitter:description" content="Question将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+Answer需将 redis配置 
+
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
 
 
 
@@ -114,15 +135,9 @@
 
 
 
-  <link rel="canonical" href="https://coding.net/u/xjpz/p/xjpz/tags/"/>
+  <link rel="canonical" href="https://coding.net/u/xjpz/p/xjpz/2016/09/29/Redis - Connection refusedconnect connect小记/"/>
 
-  <title>
-  
-
-  
-    标签 | 心尖偏左
-  
-</title>
+  <title> Redis - Connection refused:connect connect 小记 | 心尖偏左 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -153,7 +168,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,16 +258,162 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 5 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Redis - Connection refused:connect connect 小记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-29T10:59:47+08:00" content="2016-09-29">
+              2016-09-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/29/Redis - Connection refusedconnect connect小记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect小记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/29/Redis - Connection refusedconnect connect小记/" class="leancloud_visitors" data-flag-title="Redis - Connection refused:connect connect 小记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Framework/" style="font-size: 12px; color: #ccc">Framework</a> <a href="/tags/Play/" style="font-size: 12px; color: #ccc">Play</a> <a href="/tags/redis/" style="font-size: 12px; color: #ccc">redis</a> <a href="/tags/数据层/" style="font-size: 12px; color: #ccc">数据层</a> <a href="/tags/模板/" style="font-size: 12px; color: #ccc">模板</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>将代码迁移到新服务器上运行报错：</p>
+<p><code>Could not get a resource from the pool</code></p>
+<p>在服务器上能ping通，在本地根本就无法连接 或者：</p>
+<p><code>Connection refused: connect</code></p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><p>需将 redis配置 </p>
+<ul>
+<li><code>bind 127.0.0.1</code> 注释</li>
+<li><code>protected-mode yes</code> 改为 <code>protected-mode no</code></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/redis/" rel="tag">#redis</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/09/Play Framework模板里使用注入访问数据层/" rel="next" title="PlayFramework模板里使用注入访问数据层">
+                <i class="fa fa-chevron-left"></i> PlayFramework模板里使用注入访问数据层
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -261,6 +422,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect小记/"
+           data-title="Redis - Connection refused:connect connect 小记" data-url="https://coding.net/u/xjpz/p/xjpz/2016/09/29/Redis - Connection refusedconnect connect小记/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -280,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.gif"
@@ -353,6 +531,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -470,6 +659,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
