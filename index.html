@@ -258,6 +258,155 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/06/Play集成Swagger/" itemprop="url">
+                  Play集成Swagger
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-06T15:40:00+08:00" content="2016-11-06">
+              2016-11-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Play/" itemprop="url" rel="index">
+                    <span itemprop="name">Play</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/06/Play集成Swagger/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/Play集成Swagger/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/06/Play集成Swagger/" class="leancloud_visitors" data-flag-title="Play集成Swagger">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。</p>
+</blockquote>
+<p><code>Swagger</code>是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助<code>Postman</code>工具，而且能够非常方便集成在<code>Play</code>中，无论是<code>Scala</code>版还是<code>Java</code>版Play。</p>
+<p>集成在play中也很简单，以下以Play for Java版为例。</p>
+<h3 id="导入jar包，"><a href="#导入jar包，" class="headerlink" title="导入jar包，"></a>导入jar包，</h3><pre><code>&quot;io.swagger&quot; %% &quot;swagger-play2&quot; % &quot;1.5.3&quot;
+</code></pre><h3 id="导入swagger-ui"><a href="#导入swagger-ui" class="headerlink" title="导入swagger-ui"></a>导入swagger-ui</h3><p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play1.png" alt="enter image description here"></p>
+<h3 id="配置swagger-index页面"><a href="#配置swagger-index页面" class="headerlink" title="配置swagger-index页面"></a>配置swagger-index页面</h3><p>这里直接将<code>swagger-ui</code>里的<code>index.html</code>内容放到<code>views/main.scala.html</code>中，页面中引入的css、js文件地址改成play方式。</p>
+<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play4.png" alt="enter image description here"></p>
+<p>###汉化<br>在<code>main.scala.html</code>中引入相关js文件即可，</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play2.png" alt="enter image description here"></p>
+<h3 id="设置Token。"><a href="#设置Token。" class="headerlink" title="设置Token。"></a>设置Token。</h3><h5 id="在Header中添加Token，"><a href="#在Header中添加Token，" class="headerlink" title="在Header中添加Token，"></a>在Header中添加Token，</h5><p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play3.png" alt="enter image description here"></p>
+<h5 id="在url中添加token"><a href="#在url中添加token" class="headerlink" title="在url中添加token"></a>在url中添加token</h5><p>只需将<code>ApiKeyAuthorization</code>中<code>header</code>改为<code>query</code>即可。</p>
+<h3 id="代码集成"><a href="#代码集成" class="headerlink" title="代码集成"></a>代码集成</h3><p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play5.png" alt="enter image description here"></p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>GET请求</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play6.png" alt="enter image description here"></p>
+<p>POST请求</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swagger-play7.png" alt="enter image description here"></p>
+<p>点击试一下之后</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xjpz/905363/o_swaggerplay8.png" alt="enter image description here"></p>
+<p><a href="https://github.com/xjpz/play-java-swagger" target="_blank" rel="external">Github源码:https://github.com/xjpz/play-java-swagger</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/29/Redis - Connection refusedconnect connect小记/" itemprop="url">
                   Redis - Connection refused:connect connect 小记
                 </a>
@@ -423,8 +572,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Scala/" itemprop="url" rel="index">
-                    <span itemprop="name">Scala</span>
+                  <a href="/categories/Play/" itemprop="url" rel="index">
+                    <span itemprop="name">Play</span>
                   </a>
                 </span>
 
@@ -694,7 +843,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -702,7 +851,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -711,7 +860,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
