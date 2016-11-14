@@ -1,2 +1,2 @@
-# xjpz.coding.io
-[xjpz.coding.io](http://xjpz.coding.me/xjpz/)
+# xjpz.github.io
+[xjpz.github.io](http://xjpz.me/)
