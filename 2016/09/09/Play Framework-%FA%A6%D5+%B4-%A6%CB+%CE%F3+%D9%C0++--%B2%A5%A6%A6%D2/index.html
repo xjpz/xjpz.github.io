@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="redis connect," />
+  <meta name="keywords" content="PlayFramework,模板注入,数据层," />
 
 
 
@@ -84,37 +84,22 @@
 
 
 
-<meta name="description" content="Q:将代码迁移到新服务器上运行报错：
-Could not get a resource from the pool
-在服务器上能ping通，在本地根本就无法连接 或者：
-Connection refused: connect
-A:需将 redis配置 
-
-bind 127.0.0.1 注释
-protected-mode yes 改为 protected-mode no">
+<meta name="description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
+其实实现起来也很简单，定义数据层那就不说了。
+创建 MessageServices 调用数据层class">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis - Connection refused:connect connect 小记">
-<meta property="og:url" content="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect小记/index.html">
+<meta property="og:title" content="PlayFramework模板里使用注入访问数据层">
+<meta property="og:url" content="http://xjpz.me/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/index.html">
 <meta property="og:site_name" content="心尖偏左">
-<meta property="og:description" content="Q:将代码迁移到新服务器上运行报错：
-Could not get a resource from the pool
-在服务器上能ping通，在本地根本就无法连接 或者：
-Connection refused: connect
-A:需将 redis配置 
-
-bind 127.0.0.1 注释
-protected-mode yes 改为 protected-mode no">
-<meta property="og:updated_time" content="2016-10-05T08:37:17.156Z">
+<meta property="og:description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
+其实实现起来也很简单，定义数据层那就不说了。
+创建 MessageServices 调用数据层class">
+<meta property="og:updated_time" content="2016-11-06T07:44:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis - Connection refused:connect connect 小记">
-<meta name="twitter:description" content="Q:将代码迁移到新服务器上运行报错：
-Could not get a resource from the pool
-在服务器上能ping通，在本地根本就无法连接 或者：
-Connection refused: connect
-A:需将 redis配置 
-
-bind 127.0.0.1 注释
-protected-mode yes 改为 protected-mode no">
+<meta name="twitter:title" content="PlayFramework模板里使用注入访问数据层">
+<meta name="twitter:description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
+其实实现起来也很简单，定义数据层那就不说了。
+创建 MessageServices 调用数据层class">
 
 
 
@@ -135,9 +120,9 @@ protected-mode yes 改为 protected-mode no">
 
 
 
-  <link rel="canonical" href="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect小记/"/>
+  <link rel="canonical" href="http://xjpz.me/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/"/>
 
-  <title> Redis - Connection refused:connect connect 小记 | 心尖偏左 </title>
+  <title> PlayFramework模板里使用注入访问数据层 | 心尖偏左 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +262,7 @@ protected-mode yes 改为 protected-mode no">
             
             
               
-                Redis - Connection refused:connect connect 小记
+                PlayFramework模板里使用注入访问数据层
               
             
           </h1>
@@ -289,8 +274,8 @@ protected-mode yes 改为 protected-mode no">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-29T10:59:47+08:00" content="2016-09-29">
-              2016-09-29
+            <time itemprop="dateCreated" datetime="2016-09-09T16:03:57+08:00" content="2016-09-09">
+              2016-09-09
             </time>
           </span>
 
@@ -303,8 +288,8 @@ protected-mode yes 改为 protected-mode no">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/Play/" itemprop="url" rel="index">
+                    <span itemprop="name">Play</span>
                   </a>
                 </span>
 
@@ -319,8 +304,8 @@ protected-mode yes 改为 protected-mode no">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/29/Redis - Connection refusedconnect connect小记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect小记/" itemprop="commentsCount"></span>
+                <a href="/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,7 +315,7 @@ protected-mode yes 改为 protected-mode no">
 
           
           
-             <span id="/2016/09/29/Redis - Connection refusedconnect connect小记/" class="leancloud_visitors" data-flag-title="Redis - Connection refused:connect connect 小记">
+             <span id="/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/" class="leancloud_visitors" data-flag-title="PlayFramework模板里使用注入访问数据层">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,15 +337,39 @@ protected-mode yes 改为 protected-mode no">
       
 
       
-        <h2 id="Q"><a href="#Q" class="headerlink" title="Q:"></a>Q:</h2><p>将代码迁移到新服务器上运行报错：</p>
-<p><code>Could not get a resource from the pool</code></p>
-<p>在服务器上能ping通，在本地根本就无法连接 或者：</p>
-<p><code>Connection refused: connect</code></p>
-<h2 id="A"><a href="#A" class="headerlink" title="A:"></a>A:</h2><p>需将 redis配置 </p>
-<ul>
-<li><code>bind 127.0.0.1</code> 注释</li>
-<li><code>protected-mode yes</code> 改为 <code>protected-mode no</code></li>
-</ul>
+        <p>从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。</p>
+<p>其实实现起来也很简单，定义数据层那就不说了。</p>
+<h3 id="创建-MessageServices-调用数据层"><a href="#创建-MessageServices-调用数据层" class="headerlink" title="创建 MessageServices 调用数据层"></a>创建 MessageServices 调用数据层</h3><pre><code>class MessageServices @Inject()(messages: Messages) {
+
+    def retrieve(id:Long) = Await.result(messages.retrieve(id),Duration.Inf)
+
+}
+</code></pre><h3 id="创建ViewAccessPoint-方便模板调用"><a href="#创建ViewAccessPoint-方便模板调用" class="headerlink" title="创建ViewAccessPoint 方便模板调用"></a>创建ViewAccessPoint 方便模板调用</h3><pre><code>object ViewAccessPoint {
+    private val myDaoCache = Application.instanceCache[MessageServices]
+
+    object Implicits {
+        implicit def myDao(implicit application: Application): MessageServices = myDaoCache(application)
+    }
+}
+</code></pre><h3 id="html模板"><a href="#html模板" class="headerlink" title="html模板"></a>html模板</h3><pre><code>@import services.ViewAccessPoint.Implicits._
+@import play.api.Play.current
+@(id:Long)
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;p&gt;
+      @defining(myDao.retrieve(id)){ mood =&gt;
+        @mood.get.content
+      }
+  &lt;/p&gt;
+
+&lt;/body&gt;
+</code></pre><p><a href="https://github.com/xjpz/play-view" target="_blank" rel="external">源码：https://github.com/xjpz/play-view</a></p>
 
       
     </div>
@@ -383,7 +392,11 @@ protected-mode yes 改为 protected-mode no">
       
         <div class="post-tags">
           
-            <a href="/tags/redis-connect/" rel="tag">#redis connect</a>
+            <a href="/tags/PlayFramework/" rel="tag">#PlayFramework</a>
+          
+            <a href="/tags/模板注入/" rel="tag">#模板注入</a>
+          
+            <a href="/tags/数据层/" rel="tag">#数据层</a>
           
         </div>
       
@@ -392,16 +405,16 @@ protected-mode yes 改为 protected-mode no">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/09/Play Framework模板里使用注入访问数据层/" rel="next" title="PlayFramework模板里使用注入访问数据层">
-                <i class="fa fa-chevron-left"></i> PlayFramework模板里使用注入访问数据层
+              <a href="/2016/09/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/06/Play集成Swagger/" rel="prev" title="Play集成Swagger">
-                Play集成Swagger <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/" rel="prev" title="Redis - Connection refused:connect connect 小记">
+                Redis - Connection refused:connect connect 小记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -428,8 +441,8 @@ protected-mode yes 改为 protected-mode no">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect小记/"
-           data-title="Redis - Connection refused:connect connect 小记" data-url="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect小记/">
+      <div class="ds-thread" data-thread-key="2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/"
+           data-title="PlayFramework模板里使用注入访问数据层" data-url="http://xjpz.me/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/">
       </div>
     
   </div>
@@ -545,6 +558,10 @@ protected-mode yes 改为 protected-mode no">
                   <a href="https://unixcoder.github.io/" title="unixcoder's Blog" target="_blank">unixcoder's Blog</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://fingdo.com/" title="fing's Blog" target="_blank">fing's Blog</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -558,7 +575,7 @@ protected-mode yes 改为 protected-mode no">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">1.</span> <span class="nav-text">Q:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-MessageServices-调用数据层"><span class="nav-number">1.</span> <span class="nav-text">创建 MessageServices 调用数据层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建ViewAccessPoint-方便模板调用"><span class="nav-number">2.</span> <span class="nav-text">创建ViewAccessPoint 方便模板调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html模板"><span class="nav-number">3.</span> <span class="nav-text">html模板</span></a></li></ol></div>
             
           </div>
         </section>
@@ -577,7 +594,7 @@ protected-mode yes 改为 protected-mode no">
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

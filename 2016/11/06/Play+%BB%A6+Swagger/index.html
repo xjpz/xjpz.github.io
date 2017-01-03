@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PlayFramework,模板注入,数据层," />
+  <meta name="keywords" content="play-swagger,swagger-ui," />
 
 
 
@@ -84,22 +84,34 @@
 
 
 
-<meta name="description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
-其实实现起来也很简单，定义数据层那就不说了。
-创建 MessageServices 调用数据层class">
+<meta name="description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+
+Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
+集成在play中也很简单，以下以Play for Java版为例。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PlayFramework模板里使用注入访问数据层">
-<meta property="og:url" content="http://xjpz.me/2016/09/09/Play Framework模板里使用注入访问数据层/index.html">
+<meta property="og:title" content="Play集成Swagger">
+<meta property="og:url" content="http://xjpz.me/2016/11/06/Play+%BB%A6+Swagger/index.html">
 <meta property="og:site_name" content="心尖偏左">
-<meta property="og:description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
-其实实现起来也很简单，定义数据层那就不说了。
-创建 MessageServices 调用数据层class">
-<meta property="og:updated_time" content="2016-11-06T07:44:15.098Z">
+<meta property="og:description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+
+Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
+集成在play中也很简单，以下以Play for Java版为例。">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play1.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play4.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play2.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play3.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play5.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play6.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play7.png">
+<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play8.png">
+<meta property="og:updated_time" content="2016-11-12T03:38:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PlayFramework模板里使用注入访问数据层">
-<meta name="twitter:description" content="从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。
-其实实现起来也很简单，定义数据层那就不说了。
-创建 MessageServices 调用数据层class">
+<meta name="twitter:title" content="Play集成Swagger">
+<meta name="twitter:description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+
+Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
+集成在play中也很简单，以下以Play for Java版为例。">
+<meta name="twitter:image" content="http://xjpz.me/uploads/o_swagger-play1.png">
 
 
 
@@ -120,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://xjpz.me/2016/09/09/Play Framework模板里使用注入访问数据层/"/>
+  <link rel="canonical" href="http://xjpz.me/2016/11/06/Play+%BB%A6+Swagger/"/>
 
-  <title> PlayFramework模板里使用注入访问数据层 | 心尖偏左 </title>
+  <title> Play集成Swagger | 心尖偏左 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +274,7 @@
             
             
               
-                PlayFramework模板里使用注入访问数据层
+                Play集成Swagger
               
             
           </h1>
@@ -274,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-09T16:03:57+08:00" content="2016-09-09">
-              2016-09-09
+            <time itemprop="dateCreated" datetime="2016-11-06T15:40:00+08:00" content="2016-11-06">
+              2016-11-06
             </time>
           </span>
 
@@ -304,8 +316,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/09/Play Framework模板里使用注入访问数据层/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/Play Framework模板里使用注入访问数据层/" itemprop="commentsCount"></span>
+                <a href="/2016/11/06/Play+%BB%A6+Swagger/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/Play+%BB%A6+Swagger/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,7 +327,7 @@
 
           
           
-             <span id="/2016/09/09/Play Framework模板里使用注入访问数据层/" class="leancloud_visitors" data-flag-title="PlayFramework模板里使用注入访问数据层">
+             <span id="/2016/11/06/Play+%BB%A6+Swagger/" class="leancloud_visitors" data-flag-title="Play集成Swagger">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,39 +349,27 @@
       
 
       
-        <p>从Play2.4开始，推荐使用依赖注入替代静态控制器。因此我们不能像play2.3那样，在模板里直接调用object访问数据层。是的，我们还是可以使用常规方式，通过传参到模板里。不过这样很多时候不方便，比如当参数很多得时候，写起来麻烦，写出来的代码也很不好看。所以我就想在模板里直接访问数据层。</p>
-<p>其实实现起来也很简单，定义数据层那就不说了。</p>
-<h3 id="创建-MessageServices-调用数据层"><a href="#创建-MessageServices-调用数据层" class="headerlink" title="创建 MessageServices 调用数据层"></a>创建 MessageServices 调用数据层</h3><pre><code>class MessageServices @Inject()(messages: Messages) {
-
-    def retrieve(id:Long) = Await.result(messages.retrieve(id),Duration.Inf)
-
-}
-</code></pre><h3 id="创建ViewAccessPoint-方便模板调用"><a href="#创建ViewAccessPoint-方便模板调用" class="headerlink" title="创建ViewAccessPoint 方便模板调用"></a>创建ViewAccessPoint 方便模板调用</h3><pre><code>object ViewAccessPoint {
-    private val myDaoCache = Application.instanceCache[MessageServices]
-
-    object Implicits {
-        implicit def myDao(implicit application: Application): MessageServices = myDaoCache(application)
-    }
-}
-</code></pre><h3 id="html模板"><a href="#html模板" class="headerlink" title="html模板"></a>html模板</h3><pre><code>@import services.ViewAccessPoint.Implicits._
-@import play.api.Play.current
-@(id:Long)
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;p&gt;
-      @defining(myDao.retrieve(id)){ mood =&gt;
-        @mood.get.content
-      }
-  &lt;/p&gt;
-
-&lt;/body&gt;
-</code></pre><p><a href="https://github.com/xjpz/play-view" target="_blank" rel="external">源码：https://github.com/xjpz/play-view</a></p>
+        <blockquote>
+<p>Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。</p>
+</blockquote>
+<p><code>Swagger</code>是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助<code>Postman</code>工具，而且能够非常方便集成在<code>Play</code>中，无论是<code>Scala</code>版还是<code>Java</code>版Play。</p>
+<p>集成在play中也很简单，以下以Play for Java版为例。</p>
+<h3 id="导入jar包，"><a href="#导入jar包，" class="headerlink" title="导入jar包，"></a>导入jar包，</h3><pre><code>&quot;io.swagger&quot; %% &quot;swagger-play2&quot; % &quot;1.5.3&quot;
+</code></pre><h3 id="导入swagger-ui"><a href="#导入swagger-ui" class="headerlink" title="导入swagger-ui"></a>导入swagger-ui</h3><p><img src="/uploads/o_swagger-play1.png" alt="enter image description here"></p>
+<h3 id="配置swagger-index页面"><a href="#配置swagger-index页面" class="headerlink" title="配置swagger-index页面"></a>配置swagger-index页面</h3><p>这里直接将<code>swagger-ui</code>里的<code>index.html</code>内容放到<code>views/main.scala.html</code>中，页面中引入的css、js文件地址改成play方式。</p>
+<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><p><img src="/uploads/o_swagger-play4.png" alt="enter image description here"></p>
+<h3 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h3><p>在<code>main.scala.html</code>中引入相关js文件即可，</p>
+<p><img src="/uploads/o_swagger-play2.png" alt="enter image description here"></p>
+<h3 id="设置Token"><a href="#设置Token" class="headerlink" title="设置Token"></a>设置Token</h3><h4 id="在Header中添加Token"><a href="#在Header中添加Token" class="headerlink" title="在Header中添加Token"></a>在Header中添加Token</h4><p><img src="/uploads/o_swagger-play3.png" alt="enter image description here"></p>
+<h4 id="在url中添加token"><a href="#在url中添加token" class="headerlink" title="在url中添加token"></a>在url中添加token</h4><p>只需将<code>ApiKeyAuthorization</code>中<code>header</code>改为<code>query</code>即可。</p>
+<h3 id="代码集成"><a href="#代码集成" class="headerlink" title="代码集成"></a>代码集成</h3><p><img src="/uploads/o_swagger-play5.png" alt="enter image description here"></p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>GET请求</p>
+<p><img src="/uploads/o_swagger-play6.png" alt="enter image description here"></p>
+<p>POST请求</p>
+<p><img src="/uploads/o_swagger-play7.png" alt="enter image description here"></p>
+<p>点击试一下之后</p>
+<p><img src="/uploads/o_swagger-play8.png" alt="enter image description here"></p>
+<p><a href="https://github.com/xjpz/play-java-swagger" target="_blank" rel="external">Github源码:https://github.com/xjpz/play-java-swagger</a></p>
 
       
     </div>
@@ -392,11 +392,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PlayFramework/" rel="tag">#PlayFramework</a>
+            <a href="/tags/play-swagger/" rel="tag">#play-swagger</a>
           
-            <a href="/tags/模板注入/" rel="tag">#模板注入</a>
-          
-            <a href="/tags/数据层/" rel="tag">#数据层</a>
+            <a href="/tags/swagger-ui/" rel="tag">#swagger-ui</a>
           
         </div>
       
@@ -405,17 +403,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/09/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/" rel="next" title="Redis - Connection refused:connect connect 小记">
+                <i class="fa fa-chevron-left"></i> Redis - Connection refused:connect connect 小记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/29/Redis - Connection refusedconnect connect小记/" rel="prev" title="Redis - Connection refused:connect connect 小记">
-                Redis - Connection refused:connect connect 小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,8 +435,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/09/Play Framework模板里使用注入访问数据层/"
-           data-title="PlayFramework模板里使用注入访问数据层" data-url="http://xjpz.me/2016/09/09/Play Framework模板里使用注入访问数据层/">
+      <div class="ds-thread" data-thread-key="2016/11/06/Play+%BB%A6+Swagger/"
+           data-title="Play集成Swagger" data-url="http://xjpz.me/2016/11/06/Play+%BB%A6+Swagger/">
       </div>
     
   </div>
@@ -558,6 +552,10 @@
                   <a href="https://unixcoder.github.io/" title="unixcoder's Blog" target="_blank">unixcoder's Blog</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://fingdo.com/" title="fing's Blog" target="_blank">fing's Blog</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -571,7 +569,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-MessageServices-调用数据层"><span class="nav-number">1.</span> <span class="nav-text">创建 MessageServices 调用数据层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建ViewAccessPoint-方便模板调用"><span class="nav-number">2.</span> <span class="nav-text">创建ViewAccessPoint 方便模板调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html模板"><span class="nav-number">3.</span> <span class="nav-text">html模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入jar包，"><span class="nav-number">1.</span> <span class="nav-text">导入jar包，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入swagger-ui"><span class="nav-number">2.</span> <span class="nav-text">导入swagger-ui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置swagger-index页面"><span class="nav-number">3.</span> <span class="nav-text">配置swagger-index页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置路由"><span class="nav-number">4.</span> <span class="nav-text">配置路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汉化"><span class="nav-number">5.</span> <span class="nav-text">汉化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Token"><span class="nav-number">6.</span> <span class="nav-text">设置Token</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在Header中添加Token"><span class="nav-number">6.1.</span> <span class="nav-text">在Header中添加Token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在url中添加token"><span class="nav-number">6.2.</span> <span class="nav-text">在url中添加token</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码集成"><span class="nav-number">7.</span> <span class="nav-text">代码集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">8.</span> <span class="nav-text">效果</span></a></li></ol></div>
             
           </div>
         </section>
@@ -590,7 +588,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

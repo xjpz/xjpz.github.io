@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="play-swagger,swagger-ui," />
+  <meta name="keywords" content="redis connect," />
 
 
 
@@ -84,34 +84,37 @@
 
 
 
-<meta name="description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+<meta name="description" content="Q:将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+A:需将 redis配置 
 
-Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
-集成在play中也很简单，以下以Play for Java版为例。">
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Play集成Swagger">
-<meta property="og:url" content="http://xjpz.me/2016/11/06/Play集成Swagger/index.html">
+<meta property="og:title" content="Redis - Connection refused:connect connect 小记">
+<meta property="og:url" content="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/index.html">
 <meta property="og:site_name" content="心尖偏左">
-<meta property="og:description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+<meta property="og:description" content="Q:将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+A:需将 redis配置 
 
-Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
-集成在play中也很简单，以下以Play for Java版为例。">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play1.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play4.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play2.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play3.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play5.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play6.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play7.png">
-<meta property="og:image" content="http://xjpz.me/uploads/o_swagger-play8.png">
-<meta property="og:updated_time" content="2016-11-12T03:38:10.912Z">
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
+<meta property="og:updated_time" content="2016-10-05T08:37:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Play集成Swagger">
-<meta name="twitter:description" content="Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。
+<meta name="twitter:title" content="Redis - Connection refused:connect connect 小记">
+<meta name="twitter:description" content="Q:将代码迁移到新服务器上运行报错：
+Could not get a resource from the pool
+在服务器上能ping通，在本地根本就无法连接 或者：
+Connection refused: connect
+A:需将 redis配置 
 
-Swagger是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助Postman工具，而且能够非常方便集成在Play中，无论是Scala版还是Java版Play。
-集成在play中也很简单，以下以Play for Java版为例。">
-<meta name="twitter:image" content="http://xjpz.me/uploads/o_swagger-play1.png">
+bind 127.0.0.1 注释
+protected-mode yes 改为 protected-mode no">
 
 
 
@@ -132,9 +135,9 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
 
 
 
-  <link rel="canonical" href="http://xjpz.me/2016/11/06/Play集成Swagger/"/>
+  <link rel="canonical" href="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/"/>
 
-  <title> Play集成Swagger | 心尖偏左 </title>
+  <title> Redis - Connection refused:connect connect 小记 | 心尖偏左 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +277,7 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
             
             
               
-                Play集成Swagger
+                Redis - Connection refused:connect connect 小记
               
             
           </h1>
@@ -286,8 +289,8 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T15:40:00+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2016-09-29T10:59:47+08:00" content="2016-09-29">
+              2016-09-29
             </time>
           </span>
 
@@ -300,8 +303,8 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Play/" itemprop="url" rel="index">
-                    <span itemprop="name">Play</span>
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
                   </a>
                 </span>
 
@@ -316,8 +319,8 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/06/Play集成Swagger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/Play集成Swagger/" itemprop="commentsCount"></span>
+                <a href="/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,7 +330,7 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
 
           
           
-             <span id="/2016/11/06/Play集成Swagger/" class="leancloud_visitors" data-flag-title="Play集成Swagger">
+             <span id="/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/" class="leancloud_visitors" data-flag-title="Redis - Connection refused:connect connect 小记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -349,27 +352,15 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
       
 
       
-        <blockquote>
-<p>Swagger 是一款RESTFUL接口的文档在线自动生成+功能测试功能软件。</p>
-</blockquote>
-<p><code>Swagger</code>是免费开源的，简单易用，较好的解决文档与代码不同步的问题，对接口开发者开发测试、前端人员开发联调都非常方便，点击就能调用接口而不必再去借助<code>Postman</code>工具，而且能够非常方便集成在<code>Play</code>中，无论是<code>Scala</code>版还是<code>Java</code>版Play。</p>
-<p>集成在play中也很简单，以下以Play for Java版为例。</p>
-<h3 id="导入jar包，"><a href="#导入jar包，" class="headerlink" title="导入jar包，"></a>导入jar包，</h3><pre><code>&quot;io.swagger&quot; %% &quot;swagger-play2&quot; % &quot;1.5.3&quot;
-</code></pre><h3 id="导入swagger-ui"><a href="#导入swagger-ui" class="headerlink" title="导入swagger-ui"></a>导入swagger-ui</h3><p><img src="/uploads/o_swagger-play1.png" alt="enter image description here"></p>
-<h3 id="配置swagger-index页面"><a href="#配置swagger-index页面" class="headerlink" title="配置swagger-index页面"></a>配置swagger-index页面</h3><p>这里直接将<code>swagger-ui</code>里的<code>index.html</code>内容放到<code>views/main.scala.html</code>中，页面中引入的css、js文件地址改成play方式。</p>
-<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><p><img src="/uploads/o_swagger-play4.png" alt="enter image description here"></p>
-<h3 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h3><p>在<code>main.scala.html</code>中引入相关js文件即可，</p>
-<p><img src="/uploads/o_swagger-play2.png" alt="enter image description here"></p>
-<h3 id="设置Token"><a href="#设置Token" class="headerlink" title="设置Token"></a>设置Token</h3><h4 id="在Header中添加Token"><a href="#在Header中添加Token" class="headerlink" title="在Header中添加Token"></a>在Header中添加Token</h4><p><img src="/uploads/o_swagger-play3.png" alt="enter image description here"></p>
-<h4 id="在url中添加token"><a href="#在url中添加token" class="headerlink" title="在url中添加token"></a>在url中添加token</h4><p>只需将<code>ApiKeyAuthorization</code>中<code>header</code>改为<code>query</code>即可。</p>
-<h3 id="代码集成"><a href="#代码集成" class="headerlink" title="代码集成"></a>代码集成</h3><p><img src="/uploads/o_swagger-play5.png" alt="enter image description here"></p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>GET请求</p>
-<p><img src="/uploads/o_swagger-play6.png" alt="enter image description here"></p>
-<p>POST请求</p>
-<p><img src="/uploads/o_swagger-play7.png" alt="enter image description here"></p>
-<p>点击试一下之后</p>
-<p><img src="/uploads/o_swagger-play8.png" alt="enter image description here"></p>
-<p><a href="https://github.com/xjpz/play-java-swagger" target="_blank" rel="external">Github源码:https://github.com/xjpz/play-java-swagger</a></p>
+        <h2 id="Q"><a href="#Q" class="headerlink" title="Q:"></a>Q:</h2><p>将代码迁移到新服务器上运行报错：</p>
+<p><code>Could not get a resource from the pool</code></p>
+<p>在服务器上能ping通，在本地根本就无法连接 或者：</p>
+<p><code>Connection refused: connect</code></p>
+<h2 id="A"><a href="#A" class="headerlink" title="A:"></a>A:</h2><p>需将 redis配置 </p>
+<ul>
+<li><code>bind 127.0.0.1</code> 注释</li>
+<li><code>protected-mode yes</code> 改为 <code>protected-mode no</code></li>
+</ul>
 
       
     </div>
@@ -392,9 +383,7 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
       
         <div class="post-tags">
           
-            <a href="/tags/play-swagger/" rel="tag">#play-swagger</a>
-          
-            <a href="/tags/swagger-ui/" rel="tag">#swagger-ui</a>
+            <a href="/tags/redis-connect/" rel="tag">#redis connect</a>
           
         </div>
       
@@ -403,13 +392,17 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/29/Redis - Connection refusedconnect connect小记/" rel="next" title="Redis - Connection refused:connect connect 小记">
-                <i class="fa fa-chevron-left"></i> Redis - Connection refused:connect connect 小记
+              <a href="/2016/09/09/Play Framework-%FA%A6%D5+%B4-%A6%CB+%CE%F3+%D9%C0++--%B2%A5%A6%A6%D2/" rel="next" title="PlayFramework模板里使用注入访问数据层">
+                <i class="fa fa-chevron-left"></i> PlayFramework模板里使用注入访问数据层
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/06/Play+%BB%A6+Swagger/" rel="prev" title="Play集成Swagger">
+                Play集成Swagger <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -435,8 +428,8 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/Play集成Swagger/"
-           data-title="Play集成Swagger" data-url="http://xjpz.me/2016/11/06/Play集成Swagger/">
+      <div class="ds-thread" data-thread-key="2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/"
+           data-title="Redis - Connection refused:connect connect 小记" data-url="http://xjpz.me/2016/09/29/Redis - Connection refusedconnect connect%F0%ED+%C3/">
       </div>
     
   </div>
@@ -552,6 +545,10 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
                   <a href="https://unixcoder.github.io/" title="unixcoder's Blog" target="_blank">unixcoder's Blog</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="http://fingdo.com/" title="fing's Blog" target="_blank">fing's Blog</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -565,7 +562,7 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入jar包，"><span class="nav-number">1.</span> <span class="nav-text">导入jar包，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入swagger-ui"><span class="nav-number">2.</span> <span class="nav-text">导入swagger-ui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置swagger-index页面"><span class="nav-number">3.</span> <span class="nav-text">配置swagger-index页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置路由"><span class="nav-number">4.</span> <span class="nav-text">配置路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汉化"><span class="nav-number">5.</span> <span class="nav-text">汉化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Token"><span class="nav-number">6.</span> <span class="nav-text">设置Token</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在Header中添加Token"><span class="nav-number">6.1.</span> <span class="nav-text">在Header中添加Token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在url中添加token"><span class="nav-number">6.2.</span> <span class="nav-text">在url中添加token</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码集成"><span class="nav-number">7.</span> <span class="nav-text">代码集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">8.</span> <span class="nav-text">效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">1.</span> <span class="nav-text">Q:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A:</span></a></li></ol></div>
             
           </div>
         </section>
@@ -584,7 +581,7 @@ Swagger是免费开源的，简单易用，较好的解决文档与代码不同�
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
